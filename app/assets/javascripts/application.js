@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui
 //= require_tree .
+document.addEventListener("turbolinks:load", function() {
+  $('.ui.dropdown').dropdown({on:'hover'});
+  $('.ui.carousel').carousel();
+})

@@ -1,0 +1,37 @@
+<div class="ui masthead centered segment">
+  <div class="ui page grid">
+    <div class="column">
+      <div class="ui secondary menu">
+        <%= link_to t(".home"), root_url, class: "active item" %>
+        <div class="ui pointing dropdown link item">
+          <span class="text"><%= t ".shop" %></span>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="header"><%= t ".category" %></div>
+            <div class="item">
+              <i class="dropdown icon"></i>
+              <span class="text"><%= t ".clothing" %></span>
+              <div class="menu">
+                <div class="item"><%= t ".men" %></div>
+                <div class="item"><%= t ".women" %></div>
+                <div class="item"><%= t ".accessories" %></div>
+              </div>
+            </div>
+            <div class="item"><%= t ".book" %></div>
+            <div class="item"><%= t ".electronic" %></div>
+          </div>
+        </div>
+        <div class="right menu">
+          <div class="ui category search">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search..." class="prompt">
+              <i class="search icon"></i>
+            </div>
+          </div>
+          <%= link_to t(".cart"), "#", class: "ui item" %>
+          <%= link_to t(".login"), "#", class: "ui item" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

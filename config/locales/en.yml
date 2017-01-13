@@ -21,3 +21,25 @@
 
 en:
   ecommerce: "Ecommerce"
+  static_pages:
+    home:
+      home: "Home"
+      slogan: "An exciting place for the whole family to shop."
+      lead_paragraph1: "Reach, don't preach:"
+      lead_paragraph2: "Digital marketing is simply putting your customer first"
+      join_us: "Join us!"
+      register: "Register now!"
+    about:
+      about: "About"
+  shared:
+    header:
+      home: "Home"
+      cart: "Cart"
+      shop: "Shopping"
+      category: "Category"
+      book: "Book"
+      clothing: "Clothing"
+      men: "Men"
+      women: "Women"
+      accessories: "Accessories"
+      electronic: "Electronic"
