@@ -17,5 +17,4 @@
 //= require_tree .
 document.addEventListener("turbolinks:load", function() {
   $('.ui.dropdown').dropdown({on:'hover'});
-  $('.ui.carousel').carousel();
 })
