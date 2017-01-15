@@ -12,6 +12,11 @@
 
   <body>
     <%= render "shared/header" %>
-    <%= yield %>
+    <div class="ui centered segment">
+      <% flash.each do |type, message| %>
+        <div class="ui message <%= flash_class type %>" ><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
