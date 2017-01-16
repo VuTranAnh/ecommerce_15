@@ -2,58 +2,7 @@
 <div class="ui page grid">
   <div class="eight wide column centered">
     <h2 class="ui center aligned teal header"><%= t ".signup" %></h2>
-    <%= form_for @user, html: {class: "ui large form"} do |f| %>
-      <%= render "shared/error_message", object: f.object %>
-
-      <div class="ui stacked segment">
-        <div class="field <%= "error" if @user.errors[:name].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="user icon"></i>
-            <%= f.text_field :name, placeholder: t(".name") %>
-          </div>
-        </div>
-
-        <div class="field <%= "error" if @user.errors[:email].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="mail icon"></i>
-            <%= f.text_field :email, placeholder: t(".email") %>
-          </div>
-        </div>
-
-        <div class="field <%= "error" if @user.errors[:phone].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="call icon"></i>
-            <%= f.text_field :phone, placeholder: t(".phone") %>
-          </div>
-        </div>
-
-        <div class="field <%= "error" if @user.errors[:address].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="location arrow icon"></i>
-            <%= f.text_field :address, placeholder: t(".address") %>
-          </div>
-        </div>
-
-        <div class="field <%= "error" if @user.errors[:password].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="lock icon"></i>
-            <%= f.password_field :password, placeholder: t(".password") %>
-          </div>
-        </div>
-
-        <div class="field <%=
-          "error" if @user.errors[:password_confirmation].any? %>">
-          <div class="ui left icon input fluid">
-            <i class="lock icon"></i>
-            <%= f.password_field :password_confirmation,
-              placeholder: t(".confirmation") %>
-          </div>
-        </div>
-
-        <%= f.submit t(".signup"), class: "ui fluid large teal button" %>
-      </div>
-    <% end %>
-
+    <%= render "form", user: @user, button_text: t(".signup") %>
     <div class="ui message">
       <%= t ".already_have_account" %> <%= link_to t(".login"), "#" %>
     </div>

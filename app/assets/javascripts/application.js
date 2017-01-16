@@ -17,4 +17,9 @@
 //= require_tree .
 document.addEventListener("turbolinks:load", function() {
   $('.ui.dropdown').dropdown({on:'hover'});
+  $('.special.cards .image').dimmer({on: 'hover'});
+  $('form#avatar_form').on('change', function() {
+    $(this).submit();
+  });
+  $('form#avatar_form input#user_avatar').hide();
 })

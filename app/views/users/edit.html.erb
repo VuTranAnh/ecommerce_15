@@ -1,0 +1,7 @@
+<% provide :title, t(".edit") %>
+<div class="ui page grid">
+  <div class="eight wide column centered">
+    <h2 class="ui center aligned teal header"><%= t ".edit" %></h2>
+    <%= render "form", user: @user, button_text: t(".edit") %>
+  </div>
+</div>

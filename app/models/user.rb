@@ -12,9 +12,12 @@ class User < ApplicationRecord
   validates :phone, presence: true, length: {minimum: Settings.phone_min_leng,
     maximum: Settings.phone_max_leng}, numericality: true
   validates :address, presence: true
-  validates :password, presence: true, length: {minimum: Settings.pass_min_leng}
+  validates :password, presence: true, length: {minimum: Settings.pass_min_leng},
+    allow_nil: true
 
   before_save :downcase_email
+
+  mount_uploader :avatar, AvatarUploader
 
   private
   def downcase_email

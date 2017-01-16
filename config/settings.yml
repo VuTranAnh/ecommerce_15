@@ -3,3 +3,4 @@ email_max_leng: 255
 phone_min_leng: 10
 phone_max_leng: 15
 pass_min_leng: 6
+image_type: "image/jpeg,image/gif,image/png"
