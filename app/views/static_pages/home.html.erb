@@ -1,18 +1,22 @@
-<div class="ui page grid">
-  <div class="column">
-    <div class="ui transistion information visible">
-      <h1 class="ui centered header"><%= t ".slogan" %></h1>
-      <p class="ui centered lead">
-        <%= t ".lead_paragraph1" %> <br>
-        <%= t ".lead_paragraph2" %>
-      </p>
-      <%= link_to signup_path, class: "ui theme twitter large button animated fade" do %>
-        <div class="visible content"><%= t ".join_us" %></div>
-        <div class="hidden content"><%= t ".register"%></div>
-      <% end %>
-      <div class="ui centered image">
-        <%= image_tag "banner.jpg" %>
+<% if logged_in? %>
+
+<% else %>
+  <div class="ui page grid">
+    <div class="column">
+      <div class="ui transistion information visible">
+        <h1 class="ui centered header"><%= t ".slogan" %></h1>
+        <p class="ui centered lead">
+          <%= t ".lead_paragraph1" %> <br>
+          <%= t ".lead_paragraph2" %>
+        </p>
+        <%= link_to signup_path, class: "ui theme twitter large button animated fade" do %>
+          <div class="visible content"><%= t ".join_us" %></div>
+          <div class="hidden content"><%= t ".register"%></div>
+        <% end %>
+        <div class="ui centered image">
+          <%= image_tag "banner.jpg" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
