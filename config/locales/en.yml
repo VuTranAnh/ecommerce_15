@@ -43,3 +43,20 @@ en:
       women: "Women"
       accessories: "Accessories"
       electronic: "Electronic"
+    error_message:
+      form_contains: "This form contains"
+  users:
+    new:
+      signup: "Sign up"
+      already_have_account: "Already have an account?"
+      login: "Log in"
+      name: "Name"
+      email: "Email"
+      address: "Address"
+      phone: "Phone"
+      password: "Password"
+      confirmation: "Confirmation"
+    create:
+      welcome_message: "Welcome to E-commerce world!"
+    show:
+      page_notfound: "The page you were looking for doesn't exist"
