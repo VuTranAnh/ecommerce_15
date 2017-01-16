@@ -60,3 +60,13 @@ en:
       welcome_message: "Welcome to E-commerce world!"
     show:
       page_notfound: "The page you were looking for doesn't exist"
+  sessions:
+    new:
+      login: "Log in"
+      haven't_had_account: "Haven't had an account?"
+      email: "Email"
+      password: "Password"
+    create:
+      invalid_login_message: "Invalid email/password combination"
+    destroy:
+      logout_success_message: "Log out successfully"

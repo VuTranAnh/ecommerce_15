@@ -29,7 +29,22 @@
             </div>
           </div>
           <%= link_to t(".cart"), "#", class: "ui item" %>
-          <%= link_to t(".login"), "#", class: "ui item" %>
+          <% if logged_in? %>
+            <div class="ui pointing dropdown link item">
+              <span class="text"><%= t ".account" %></span>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="item"><%= link_to t(".profile"), current_user %></div>
+                <div class="item"><%= link_to t(".settings"), "" %></div>
+                <div class="divider"></div>
+                <div class="item" %><%= link_to t(".logout"), logout_path,
+                  method: :delete %></div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to t(".login"), login_path, class: "ui item" %>
+          <% end %>
         </div>
       </div>
     </div>
