@@ -50,16 +50,26 @@ en:
       signup: "Sign up"
       already_have_account: "Already have an account?"
       login: "Log in"
+    form:
       name: "Name"
       email: "Email"
       address: "Address"
       phone: "Phone"
       password: "Password"
       confirmation: "Confirmation"
+    edit:
+      edit: "Edit"
+      page_notfound: "The page you were looking for doesn't exist"
+      not_the_right_user: "You are not authorized to do that"
+    update:
+      profile_updated: "Profile updated"
     create:
       welcome_message: "Welcome to E-commerce world!"
     show:
       page_notfound: "The page you were looking for doesn't exist"
+      not_the_right_user: "You are not authorized to do that"
+      change_avatar: "Change avatar"
+      join_since: "Joined since"
   sessions:
     new:
       login: "Log in"

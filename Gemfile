@@ -12,6 +12,9 @@ gem "jbuilder", "~> 2.5"
 gem "config"
 gem "semantic-ui-sass", git: "https://github.com/doabit/semantic-ui-sass.git"
 gem "bcrypt"
+gem "carrierwave"
+gem "mini_magick"
+gem "fog"
 
 group :development, :test do
   gem "byebug", platform: :mri

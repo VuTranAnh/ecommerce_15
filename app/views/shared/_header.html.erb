@@ -35,7 +35,8 @@
               <i class="dropdown icon"></i>
               <div class="menu">
                 <div class="item"><%= link_to t(".profile"), current_user %></div>
-                <div class="item"><%= link_to t(".settings"), "" %></div>
+                <div class="item"><%= link_to t(".settings"),
+                  edit_user_path(current_user) %></div>
                 <div class="divider"></div>
                 <div class="item" %><%= link_to t(".logout"), logout_path,
                   method: :delete %></div>
