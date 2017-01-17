@@ -1,0 +1,20 @@
+<div class="ui centered grid">
+  <div class="row"><%= paginate products %></div>
+  <% products.each do |product| %>
+    <div class="three wide column">
+      <div class="ui fluid card">
+        <div class="image">
+          <%= image_tag product.image.url %>
+        </div>
+        <div class="content">
+          <p><%= truncate product.name, length: Settings.product_max_leng %></p>
+          <small><%= number_to_currency product.price %></small>
+        </div>
+        <div class="extra">
+          <%= t ".rating" %><div class="ui star rating"></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate products %>
+</div>

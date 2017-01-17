@@ -1,6 +1,4 @@
-<% if logged_in? %>
-
-<% else %>
+<% unless logged_in? %>
   <div class="ui page grid">
     <div class="column">
       <div class="ui transistion information visible">
@@ -20,3 +18,4 @@
     </div>
   </div>
 <% end %>
+<%= render "shared/list_products", products: @products %>
