@@ -82,3 +82,14 @@ en:
       invalid_login_message: "Invalid email/password combination"
     destroy:
       logout_success_message: "Log out successfully"
+  products:
+    show:
+      origin: "Origin"
+      read_more: "Read more"
+      code: "Product code"
+      buy_new: "Buy new"
+      cant_find_product: "The page you were looking for doesn't exist"
+      ship_and_sold_from: "Ships from and sold by E.com."
+      gift_wrap: "Gift-wrap available."
+      add_to_cart: "Add to cart"
+      free_ship_condition: "FREE ship on orders over $49."

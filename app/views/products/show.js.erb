@@ -1,0 +1,4 @@
+$(function() {
+  $('.read-more-<%= @product.id %>').parent()
+    .html('<%= j @product.description %>');
+})

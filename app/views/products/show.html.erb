@@ -1,0 +1,61 @@
+<div class="ui grid custom_grid vertical segment">
+  <div class="ui mini breadcrumb">
+    <%= link_to @category.parent.name.capitalize, class: "section" %>
+    <i class="right chevron icon divider"></i>
+    <%= link_to @category.name.capitalize, class: "section" %>
+  </div>
+  <div class="row">
+    <div class="three wide column">
+      <div class="ui centered card">
+        <div class="image">
+          <%= image_tag @product.image.url %>
+        </div>
+      </div>
+    </div>
+    <div class="ui nine wide column segment">
+      <h2 class="header"><%= @product.name %></h2>
+      <p><%= t ".code" %>: <%= @product.code %></p>
+      <p><%= t ".origin" %>: <%= @product.origin %></p>
+      <div class="ui star rating"></div>
+      <div class="ui vertical segment">
+        <% if @product.description.length > Settings.description_limit %>
+          <%= truncate @product.description,
+            length: Settings.description_limit %>
+          <%= link_to t(".read_more"), "", remote: true,
+            class: "read-more-#{@product.id}" %>
+        <% else %>
+          <%= @product.description %>
+        <% end %>
+      </div>
+    </div>
+    <div class="four wide column">
+      <div class="ui segment">
+        <div class="ui grid">
+          <div class="row">
+            <div class="five wide column">
+              <h5 class="header"><%= t ".buy_new" %></h5>
+            </div>
+            <div class="eleven wide right aligned column">
+              <%= number_to_currency @product.price %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <%= t ".quantity" %>
+              <p><%= t ".free_ship_condition" %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <p><%= t ".ship_and_sold_from" %></p>
+              <p><%= t ".gift_wrap" %></p>
+              <button class="ui teal button">
+                <i class="icon cart"></i><%= t ".add_to_cart" %>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

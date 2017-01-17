@@ -22,7 +22,7 @@ subcategories_ids = Category.where.not(parent_id: nil).pluck(:id)
 subcategories_ids.each do |subcategory_id|
   100.times do
     Product.create!(name: Faker::Commerce.product_name,
-      description: Faker::Lorem.paragraph,
+      description: Faker::Lorem.paragraph(rand(60..80)),
       price: Faker::Commerce.price, code: Faker::Code.asin,
       origin: Faker::Address.country, category_id: subcategory_id)
   end

@@ -12,7 +12,7 @@
 
   <body>
     <%= render "shared/header" %>
-    <div class="ui centered segment">
+    <div class="ui centered vertical segment">
       <% flash.each do |type, message| %>
         <div class="ui message <%= flash_class type %>" ><%= message %></div>
       <% end %>
