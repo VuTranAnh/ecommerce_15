@@ -45,6 +45,8 @@ en:
       electronic: "Electronic"
     error_message:
       form_contains: "This form contains"
+    list_products:
+      rating: "Rating"
   users:
     new:
       signup: "Sign up"

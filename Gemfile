@@ -15,6 +15,8 @@ gem "bcrypt"
 gem "carrierwave"
 gem "mini_magick"
 gem "fog"
+gem "faker"
+gem "kaminari"
 
 group :development, :test do
   gem "byebug", platform: :mri

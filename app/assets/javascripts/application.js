@@ -22,4 +22,8 @@ document.addEventListener("turbolinks:load", function() {
     $(this).submit();
   });
   $('form#avatar_form input#user_avatar').hide();
+  $('.ui.rating').rating({
+    initialRating: 0,
+    maxRating: 5
+  });
 })
