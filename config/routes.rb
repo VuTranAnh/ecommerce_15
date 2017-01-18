@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users, except: :new
   resources :products, only: :show
+  resources :carts, only: :show
+  resources :line_items, only: [:create, :update, :destroy]
 
   root "static_pages#show", page: "home"
 end

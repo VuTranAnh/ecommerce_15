@@ -28,7 +28,7 @@
               <i class="search icon"></i>
             </div>
           </div>
-          <%= link_to t(".cart"), "#", class: "ui item" %>
+          <%= link_to t(".cart"), cart_path(current_cart), class: "ui item" %>
           <% if logged_in? %>
             <div class="ui pointing dropdown link item">
               <span class="text"><%= t ".account" %></span>

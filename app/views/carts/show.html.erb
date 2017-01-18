@@ -1,0 +1,48 @@
+<div class="ui grid custom_grid">
+  <div class="twelve wide column">
+    <div class="ui grid cart_headline">
+      <div class="twelve wide column">
+        <h2 class="header"><%= t ".shopping_cart" %></h2>
+      </div>
+      <div class="four wide right aligned column">
+        <p><%= t ".quantity" %></p>
+      </div>
+    </div>
+
+    <div class="ui middle aligned divided list">
+      <% @cart.line_items.each do |item| %>
+        <div class="ui grid item">
+          <div class="two wide column">
+            <%= image_tag item.product.image.url, class: "ui tiny image" %>
+          </div>
+          <div class="nine wide column">
+            <%= link_to item.product.name, product_path(item.product) %>
+            <p><%= t ".code" %>: <%= item.product.code %></p>
+            <p class="price"><%= number_to_currency item.product.price %></p>
+            <%= link_to t(".remove"), line_item_path(item), method: :delete,
+              remote: true, class: "remove" %>
+          </div>
+          <div class="four wide right aligned column quantity_section">
+            <%= form_for item, url: line_item_path(item), method: :put do |f| %>
+              <%= f.select :quantity, options_for_select(
+                (Settings.min_qty..Settings.max_qty), item.quantity),
+                {}, class: "ui dropdown qty_select" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="ui grid">
+      <div class="sixteen wide right aligned column">
+        <div class="ui grid">
+          <div class="fourteen wide right aligned column">
+            <h4 class="header"><%= t ".subtotal" %>:</h4>
+          </div>
+          <div class="two wide column">
+            <%= number_to_currency @cart.subtotal %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
