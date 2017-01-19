@@ -43,6 +43,11 @@ en:
       women: "Women"
       accessories: "Accessories"
       electronic: "Electronic"
+      login: "Log in"
+      logout: "Log out"
+      settings: "Settings"
+      profile: "Profile"
+      account: "Account"
     error_message:
       form_contains: "This form contains"
     list_products:
@@ -93,3 +98,17 @@ en:
       gift_wrap: "Gift-wrap available."
       add_to_cart: "Add to cart"
       free_ship_condition: "FREE ship on orders over $49."
+      quantity: "Quantity"
+  line_items:
+    create:
+      added_to_cart: "%{product_name} added to cart"
+    update:
+      cant_find_item: "Cant find item"
+    destroy:
+      cant_find_item: "Cant find item"
+  carts:
+    show:
+      shopping_cart: "Shopping cart"
+      quantity: "Quantity"
+      remove: "Remove"
+      subtotal: "Subtotal"

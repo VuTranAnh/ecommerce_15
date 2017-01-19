@@ -40,18 +40,22 @@
             </div>
           </div>
           <div class="row">
-            <div class="column">
+            <div class="nine wide column">
               <%= t ".quantity" %>
-              <p><%= t ".free_ship_condition" %></p>
+            </div>
+            <div class="seven wide right aligned column">
+              <%= select_tag :qty, options_for_select((1..20)) %>
             </div>
           </div>
           <div class="row">
             <div class="column">
+              <p><%= t ".free_ship_condition" %></p>
               <p><%= t ".ship_and_sold_from" %></p>
               <p><%= t ".gift_wrap" %></p>
-              <button class="ui teal button">
+              <%= button_to line_items_path(product_id: @product.id), remote: true,
+                class: "ui teal button add_to_cart" do %>
                 <i class="icon cart"></i><%= t ".add_to_cart" %>
-              </button>
+              <% end %>
             </div>
           </div>
         </div>

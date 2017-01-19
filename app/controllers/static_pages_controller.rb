@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :current_cart
+
   def show
     if valid_page?
       @products = Product.order(created_at: :desc)

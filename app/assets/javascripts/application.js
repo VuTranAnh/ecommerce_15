@@ -16,7 +16,7 @@
 //= require semantic-ui
 //= require_tree .
 document.addEventListener("turbolinks:load", function() {
-  $('.ui.dropdown').dropdown({on:'hover'});
+  $('.ui.pointing.dropdown').dropdown({on:'hover'});
   $('.special.cards .image').dimmer({on: 'hover'});
   $('form#avatar_form').on('change', function() {
     $(this).submit();
@@ -26,4 +26,24 @@ document.addEventListener("turbolinks:load", function() {
     initialRating: 0,
     maxRating: 5
   });
+  $('.ui.dropdown.qty_select').dropdown();
+})
+
+$(document).on('ajax:success', '.remove', function(event, xhr, status, error) {
+  $(this).closest('.item').remove();
+});
+
+$(document).on('ajax:error', '.remove', function(event, xhr, status, error) {
+  alert('Something went wrong');
+});
+
+$(document).on('change', 'select', function() {
+  var form = $(this).closest('form');
+  $(form).submit();
+})
+
+$(document).on('click', '.button_to', function() {
+  var qty = $('select').val();
+  $(this).closest('form').append("<input type='hidden' name='qty' value='" +
+    qty + "' >");
 })
