@@ -18,9 +18,11 @@
           <div class="nine wide column">
             <%= link_to item.product.name, product_path(item.product) %>
             <p><%= t ".code" %>: <%= item.product.code %></p>
-            <p class="price"><%= number_to_currency item.product.price %></p>
+            <p class="price">
+              <%= number_to_currency item.product.price %>
+            </p>
             <%= link_to t(".remove"), line_item_path(item), method: :delete,
-              remote: true, class: "remove" %>
+              class: "remove" %>
           </div>
           <div class="four wide right aligned column quantity_section">
             <%= form_for item, url: line_item_path(item), method: :put do |f| %>
@@ -38,11 +40,40 @@
           <div class="fourteen wide right aligned column">
             <h4 class="header"><%= t ".subtotal" %>:</h4>
           </div>
-          <div class="two wide column">
+          <div class="two wide column cart_subtotal">
             <%= number_to_currency @cart.subtotal %>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="four wide column">
+    <div class="shipping-fee-section ui attached message
+      <%= @cart.subtotal > Settings.free_ship ? "free-shipping" : "" %>">
+      <div class="header">
+        <div class="sixteen wide column">
+          <div class="free">
+            <i class="checkmark icon"></i>
+            <%= t ".free_shipping" %>
+          </div>
+
+          <div class="paid">
+            <i class="remove icon"></i>
+            <%= t ".shipping_fee" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui attached fluid segment">
+      <h4 class="header">
+        <%= t ".subtotal" %>(<%= t ".item_count",
+          count: @cart.line_items.size %>):
+        <span class="cart_subtotal">
+          <%= number_to_currency @cart.subtotal %>
+        </span>
+      </h4>
+      <%= link_to t(".proceed_to_checkout"), new_order_path,
+        class: "ui button teal" %>
     </div>
   </div>
 </div>

@@ -29,15 +29,7 @@ document.addEventListener("turbolinks:load", function() {
   $('.ui.dropdown.qty_select').dropdown();
 })
 
-$(document).on('ajax:success', '.remove', function(event, xhr, status, error) {
-  $(this).closest('.item').remove();
-});
-
-$(document).on('ajax:error', '.remove', function(event, xhr, status, error) {
-  alert('Something went wrong');
-});
-
-$(document).on('change', 'select', function() {
+$(document).on('change', 'select#line_item_quantity', function() {
   var form = $(this).closest('form');
   $(form).submit();
 })
@@ -46,4 +38,8 @@ $(document).on('click', '.button_to', function() {
   var qty = $('select').val();
   $(this).closest('form').append("<input type='hidden' name='qty' value='" +
     qty + "' >");
+})
+
+$(document).on('focus', '#order_payment_method', function() {
+  $('option[value=""]').remove();
 })

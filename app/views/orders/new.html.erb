@@ -1,0 +1,92 @@
+<div class="ui grid">
+  <div class="eight wide centered column">
+    <div class="ui three top attached steps">
+      <div class="step">
+        <i class="truck icon"></i>
+        <div class="content">
+          <div class="title"><%= t ".shipping" %></div>
+          <div class="description"><%= t ".choose_shipping_options" %></div>
+        </div>
+      </div>
+      <div class="step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title"><%= t ".billing" %></div>
+          <div class="description"><%= t ".enter_billing" %></div>
+        </div>
+      </div>
+      <div class="step">
+        <i class="info icon"></i>
+        <div class="content">
+          <div class="title"><%= t ".confirm_order" %></div>
+          <div class="description"><%= t ".verify" %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="eight wide centered column">
+      <div class="ui attached segment">
+        <div class="ui grid">
+          <div class="sixteen wide column">
+            <h1 class="header"><%= t ".shipping_info" %></h1>
+            <p><%= t ".please_enter_info" %></p>
+          </div>
+        </div>
+      </div>
+      <div class="ui attached segment">
+        <%= form_for @order, html: {class: "ui large form"} do |f| %>
+          <%= render "shared/error_message", object: f.object %>
+
+          <div class="ui stacked">
+            <div class="field <%= "error" if @order.errors[:full_name].any? %>">
+              <div class="ui left icon input fluid">
+                <i class="user icon"></i>
+                <%= f.text_field :full_name, placeholder: t(".full_name") %>
+              </div>
+            </div>
+
+            <div class="field <%= "error" if @order.errors[:phone].any? %>">
+              <div class="ui left icon input fluid">
+                <i class="call icon"></i>
+                <%= f.text_field :phone, placeholder: t(".phone") %>
+              </div>
+            </div>
+
+            <div class="field <%= "error" if @order.errors[:address].any? %>">
+              <div class="ui left icon input fluid">
+                <i class="location arrow icon"></i>
+                <%= f.text_field :address, placeholder: t(".address") %>
+              </div>
+            </div>
+
+            <div class="field <%= "error" if @order.errors[:city].any? %>">
+              <div class="ui left icon input fluid">
+                <i class="building icon"></i>
+                <%= f.text_field :city, placeholder: t(".city") %>
+              </div>
+            </div>
+
+            <div class="field <%= "error" if @order.errors[:country].any? %>">
+              <div class="ui left icon input fluid">
+                <i class="world icon"></i>
+                <%= f.text_field :country, placeholder: t(".country") %>
+              </div>
+            </div>
+
+            <div class="field <%= "error" if @order.errors[:payment_method].any? %>">
+              <div class="ui left icon input fluid">
+                <%= f.select :payment_method,
+                  Order.payment_methods.keys.map {|w| [w.humanize, w]},
+                  class: "ui dropdown", include_blank: "Payment",
+                  selected: "Payment" %>
+              </div>
+            </div>
+
+            <%= f.submit t(".order"), class: "ui fluid large teal button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ class Cart < ApplicationRecord
   end
 
   def subtotal
+    return 0 if line_items.empty?
     line_items.pluck(:price).inject(:+)
   end
 end

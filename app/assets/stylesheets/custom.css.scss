@@ -38,3 +38,19 @@
 .ui.dropdown.qty_select {
   min-width: 10px;
 }
+
+.shipping-fee-section {
+  .free {
+    display: none;
+  }
+
+  &.free-shipping {
+    .free {
+      display: block;
+    }
+
+    .paid {
+      display: none;
+    }
+  }
+}

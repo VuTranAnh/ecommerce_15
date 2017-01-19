@@ -9,3 +9,4 @@ products_per_page: 50
 description_limit: 700
 min_qty: 1
 max_qty: 20
+free_ship: 49

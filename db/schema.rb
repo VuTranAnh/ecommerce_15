@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118045430) do
+ActiveRecord::Schema.define(version: 20170119030157) do
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -42,12 +42,14 @@ ActiveRecord::Schema.define(version: 20170118045430) do
     t.string   "full_name"
     t.string   "address"
     t.string   "phone"
-    t.integer  "payment_method"
-    t.integer  "status"
+    t.integer  "payment_method",                default: 0, null: false
+    t.integer  "status",                        default: 0, null: false
     t.decimal  "total",          precision: 10
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "city"
+    t.string   "country"
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
