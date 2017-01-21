@@ -1,0 +1,20 @@
+<table class="ui celled selectable table">
+  <thead>
+    <tr>
+      <th><%= t ".id" %></th>
+      <th><%= t ".full_name" %></th>
+      <th><%= t ".ordered_at" %></th>
+      <th><%= t ".total" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% user.orders.history_orders(status).each.with_index do |order, i| %>
+      <tr class="clickable_row" data-href="<%= order_path order %>">
+        <td><%= get_pagination_offset + i + 1 %></td>
+        <td><%= order.full_name %></td>
+        <td><%= order.created_at.to_date %></td>
+        <td><%= number_to_currency order.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -30,3 +30,7 @@ $(document).on('click', '.button_to', function() {
 $(document).on('focus', '#order_payment_method', function() {
   $('option[value=""]').remove();
 })
+
+$(document).on('click', '.clickable_row', function() {
+    window.location = $(this).data('href');
+});

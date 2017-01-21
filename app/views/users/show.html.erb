@@ -1,4 +1,4 @@
-<div class="ui grid">
+<div class="ui grid segment">
   <div class="three wide column">
     <div class="ui special cards">
       <div class="centered card">
@@ -30,5 +30,25 @@
     </div>
   </div>
   <div class="twelve wide column">
+    <h3 class="header"><%= t ".your_orders_history" %></h3>
+    <div class="ui top attached tabular menu">
+      <a class="item active" data-tab="first"><%= t ".pending" %></a>
+      <a class="item" data-tab="second"><%= t ".approved" %></a>
+      <a class="item" data-tab="third"><%= t ".rejected" %></a>
+      <a class="item" data-tab="fourth"><%= t ".finished" %></a>
+    </div>
+    <div class="ui bottom attached tab segment active" data-tab="first">
+      <%= render "shared/table", user: @user, status: "pending" %>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="second">
+      <%= render "shared/table", user: @user, status: "approved" %>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="third">
+      <%= render "shared/table", user: @user, status: "rejected" %>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="fourth">
+      <%= render "shared/table", user: @user, status: "finished" %>
+    </div>
   </div>
 </div>
+<%= render "shared/recently_viewed" %>
