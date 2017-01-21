@@ -3,10 +3,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by id: params[:id]
-    unless @product
+    if @product.nil?
       flash[:notice] = t ".cant_find_product"
       redirect_to root_url
+    else
+      @category = Category.find_by id: @product.category_id
     end
-    @category = Category.find_by id: @product.category_id
   end
 end

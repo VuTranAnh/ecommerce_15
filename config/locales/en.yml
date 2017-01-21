@@ -21,6 +21,10 @@
 
 en:
   ecommerce: "Ecommerce"
+  you_must_be_admin: "You must be admin to do that"
+  please_log_in: "Please log in"
+  add_product: "Add product"
+  page_notfound: "The page you were looking for doesn't exsist"
   static_pages:
     home:
       home: "Home"
@@ -97,14 +101,12 @@ en:
       confirmation: "Confirmation"
     edit:
       edit: "Edit"
-      page_notfound: "The page you were looking for doesn't exist"
       not_the_right_user: "You are not authorized to do that"
     update:
       profile_updated: "Profile updated"
     create:
       welcome_message: "Welcome to E-commerce world!"
     show:
-      page_notfound: "The page you were looking for doesn't exist"
       not_the_right_user: "You are not authorized to do that"
       change_avatar: "Change avatar"
       join_since: "Joined since"
@@ -173,7 +175,6 @@ en:
       country: "Country"
       order: "Place order"
       your_cart_is_empty: "Your cart is empty"
-      please_log_in: "Please log in"
     create:
       order_successfully: "Order successfully. We will send you an confirm email
         soon. Thanks for shopping with us."
@@ -184,3 +185,44 @@ en:
       code: "Code"
       quantity: "Quantity"
       total: "Total"
+  admin:
+    application:
+      index:
+        dashboard: "Dashboard"
+        orders: "Orders"
+        products: "Products"
+        customers: "Customers"
+        admins: "Admins"
+        welcome_admin: "Welcome to admin's dashboard"
+        keep_up_the_good_work: "Keep up the good work"
+    products:
+      index:
+        products: "Products"
+        import_export: "Import/Export"
+        import: "Import"
+        export: "Export"
+        add_product: "Add Product"
+        id: "ID"
+        name: "Name"
+        price: "Price"
+        origin: "Origin"
+        code: "Code"
+        action: "Action"
+        are_you_sure: "Are you sure?"
+      new:
+        new_product: "New Product"
+        add_product: "Add product"
+      create:
+        new_product_added: "New product added"
+      edit:
+        edit_product: "Edit product"
+      update:
+        updated_successfully: "Updated successfully"
+      destroy:
+        removed_successfully: "Removed successfully"
+      form:
+        name: "Name"
+        price: "Price"
+        origin: "Origin"
+        code: "Code"
+        description: "Description"

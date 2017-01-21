@@ -11,3 +11,4 @@ min_qty: 1
 max_qty: 20
 free_ship: 49
 recently_size: 9
+descrip_min: 20

@@ -1,0 +1,79 @@
+<div class="ui secondary pointing fluid menu">
+  <h2 class="header"><%= t ".products" %></h2>
+</div>
+<div class="nine wide products column">
+  <div class="ui form">
+    <div class="ui basic segment">
+      <div class="two fields">
+        <div class="field">
+          <div class="ui selection dropdown">
+
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search..">
+            <i class="search icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="seven wide products column">
+  <div class="ui basic right aligned segment">
+    <div class="ui blue import-export buttons">
+      <div class="ui button"><%= t ".import_export" %></div>
+      <div class="ui floating dropdown icon button">
+        <i class="dropdown icon"></i>
+        <div class="menu transition hidden">
+          <div class="item"><%= t ".import" %></div>
+          <div class="item"><%= t ".export" %></div>
+        </div>
+      </div>
+    </div>
+    <%= link_to t(".add_product"), new_admin_product_path,
+      class: "ui primary button" %>
+  </div>
+</div>
+<table class="ui very basic striped celled table">
+  <thead>
+    <tr>
+      <th><%= t ".id" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".price" %></th>
+      <th><%= t ".origin" %></th>
+      <th><%= t ".code" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each.with_index do |product, i| %>
+      <tr>
+        <td><%= get_pagination_offset + i + 1 %></td>
+        <td class="clickable_row" data-href="<%= product_path product %>">
+          <%= product.name %>
+        </td>
+        <td><%= number_to_currency product.price %></td>
+        <td><%= product.origin %></td>
+        <td><%= product.code %></td>
+        <td>
+          <%= link_to edit_admin_product_path(product) do %>
+            <i class="edit icon"></i>
+          <% end %>
+          <%= link_to admin_product_path(product), method: :delete,
+            data: {confirm: t(".are_you_sure")} do %>
+            <i class="trash icon"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="5">
+        <%= paginate @products %>
+      </th>
+    </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,57 @@
+<div class="ten wide centered column">
+  <div class="ui attached segment">
+    <%= form_for [:admin, product], html: {class: "ui large form",
+      multipart: true} do |f| %>
+      <%= render "shared/error_message", object: f.object %>
+
+      <div class="ui stacked">
+        <div class="field <%= "error" if product.errors[:name].any? %>">
+          <div class="ui left icon input fluid">
+            <i class="user icon"></i>
+            <%= f.text_field :name, placeholder: t(".name") %>
+          </div>
+        </div>
+
+        <div class="field <%= "error" if product.errors[:origin].any? %>">
+          <div class="ui left icon input fluid">
+            <i class="plane icon"></i>
+            <%= f.text_field :origin, placeholder: t(".origin") %>
+          </div>
+        </div>
+
+        <div class="field <%= "error" if product.errors[:code].any? %>">
+          <div class="ui left icon input fluid">
+            <i class="barcode icon"></i>
+            <%= f.text_field :code, placeholder: t(".code") %>
+          </div>
+        </div>
+
+        <div class="field <%= "error" if product.errors[:price].any? %>">
+          <div class="ui left icon input fluid">
+            <i class="dollar icon"></i>
+            <%= f.number_field :price, step: 0.01, min: 0,
+              placeholder: t(".price") %>
+          </div>
+        </div>
+
+        <div class="field <%= "error" if product.errors[:category_id].any? %>">
+          <div class="ui left icon input fluid">
+            <%= f.select :category_id, custom_display(subcategories),
+              class: "ui dropdown", include_blank: "Category",
+              selected: "Category" %>
+          </div>
+        </div>
+
+        <div class="field <%= "error" if product.errors[:description].any? %>">
+          <div class="ui left icon input fluid">
+            <%= f.text_area :description, placeholder: t(".description") %>
+          </div>
+        </div>
+
+        <%= f.file_field :image, accept: Settings.image_type %>
+
+        <%= f.submit button_text, class: "ui fluid large teal button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

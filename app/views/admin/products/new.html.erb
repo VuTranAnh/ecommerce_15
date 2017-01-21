@@ -1,0 +1,5 @@
+<div class="ui secondary pointing fluid menu">
+  <h2 class="header"><%= t ".new_product" %></h2>
+</div>
+<%= render "form", product: @product, subcategories: @subcategories,
+  button_text: t(".add_product") %>

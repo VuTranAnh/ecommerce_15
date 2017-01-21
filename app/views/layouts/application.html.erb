@@ -11,13 +11,29 @@
   </head>
 
   <body>
-    <%= render "shared/header" %>
-    <div class="ui centered vertical segment">
-      <% flash.each do |type, message| %>
-        <div class="ui message <%= flash_class type %>" ><%= message %></div>
-      <% end %>
-      <%= yield %>
-    </div>
-    <%= render "shared/footer" %>
+    <% if admin_section? %>
+      <div class="pusher">
+        <div class="ui grid container">
+          <%= render "admin/shared/sidebar" %>
+          <div class="ui main grid">
+            <% flash.each do |type, message| %>
+              <div class="ui message <%= flash_class type %>">
+                <%= message %>
+              </div>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <%= render "shared/header" %>
+      <div class="ui centered vertical segment">
+        <% flash.each do |type, message| %>
+          <div class="ui message <%= flash_class type %>" ><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>

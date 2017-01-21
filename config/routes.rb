@@ -13,5 +13,11 @@ Rails.application.routes.draw do
   resources :carts, only: :show
   resources :line_items, only: [:create, :update, :destroy]
 
+  namespace :admin do
+    root "application#index"
+
+    resources :products, except: :show
+  end
+
   root "static_pages#show", page: "home"
 end
