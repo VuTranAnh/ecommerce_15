@@ -54,3 +54,40 @@
     }
   }
 }
+
+.slick-slide {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+i.angle.left {
+  float: left;
+  position: relative;
+  top: 85px;
+  right: 10px;
+}
+
+i.angle.right {
+  float: right;
+  position: relative;
+  bottom: 226px;
+  left: 33px;
+}
+
+.footer {
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+  background-color: #232f3e;
+  color: #c0c1c2;
+  .header {
+    color: #fff;
+  }
+  .copyright {
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.ui.grid.footer {
+  margin-top: 30px;
+}

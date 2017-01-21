@@ -19,4 +19,8 @@ module ApplicationHelper
     end
     @cart
   end
+
+  def recently_viewed_products
+    session[:history].map {|item| Product.find_by id: item} if session[:history]
+  end
 end

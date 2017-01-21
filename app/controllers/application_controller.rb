@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def store_recently_viewed
+    session[:history] ||= []
+    session[:history].shift if session[:history].size >= Settings.recently_size
+    session[:history] << params[:id] unless
+      session[:history].include? params[:id]
+  end
 end
