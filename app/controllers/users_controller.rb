@@ -38,14 +38,6 @@ class UsersController < ApplicationController
       :password_confirmation, :avatar
   end
 
-  def load_user
-    @user = User.find_by id: params[:id]
-    unless @user
-      flash[:danger] = t ".page_notfound"
-      redirect_to root_url
-    end
-  end
-
   def correct_user
     @user = User.find_by id: params[:id]
     unless @user == current_user

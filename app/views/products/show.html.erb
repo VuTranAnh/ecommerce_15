@@ -52,7 +52,7 @@
               <p><%= t ".free_ship_condition" %></p>
               <p><%= t ".ship_and_sold_from" %></p>
               <p><%= t ".gift_wrap" %></p>
-              <%= button_to line_items_path(product_id: @product.id), remote: true,
+              <%= button_to line_items_path(product_id: @product.id),
                 class: "ui teal button add_to_cart" do %>
                 <i class="icon cart"></i><%= t ".add_to_cart" %>
               <% end %>

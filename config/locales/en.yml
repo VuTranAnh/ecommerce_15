@@ -112,3 +112,31 @@ en:
       quantity: "Quantity"
       remove: "Remove"
       subtotal: "Subtotal"
+      free_shipping: "Free shipping"
+      shipping_fee: "10$ shipping fee"
+      item_count:
+        one: "%{count} item"
+        other: "%{count} items"
+      proceed_to_checkout: "Proceed to checkout"
+  orders:
+    new:
+      shipping_info: "Shipping infomation"
+      please_enter_info: "Please enter shipping information for this order. When
+       finished, click the 'Order' button. We will send you an email to confirm
+       order's status soon. Happy shopping"
+      shipping: "Shipping"
+      choose_shipping_options: "Choose Shipping Options"
+      billing: "Billing"
+      enter_billing: "Enter billing"
+      confirm_order: "Confirm Order"
+      verify: "Verify"
+      full_name: "Full name"
+      phone: "Phone"
+      address: "Address"
+      city: "City"
+      country: "Country"
+      order: "Place order"
+      your_cart_is_empty: "Your cart is empty"
+    create:
+      order_successfully: "Order successfully. We will send you an confirm email
+        soon. Thanks for shopping with us."

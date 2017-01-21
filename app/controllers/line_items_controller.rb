@@ -18,6 +18,10 @@ class LineItemsController < ApplicationController
 
   def destroy
     @line_item.destroy
+    if @cart.line_items.include? @line_item
+      flash[:danger] = t ".something_wrong"
+    end
+    redirect_to @cart
   end
 
   private
