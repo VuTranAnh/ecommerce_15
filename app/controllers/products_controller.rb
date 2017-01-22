@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :store_recently_viewed
+
   def show
     @product = Product.find_by id: params[:id]
     unless @product

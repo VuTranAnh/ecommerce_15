@@ -52,6 +52,32 @@ en:
       form_contains: "This form contains"
     list_products:
       rating: "Rating"
+    recently_viewed:
+      your_recently_viewed: "Your recently viewed products"
+      rating: "Rating"
+    footer:
+      get_to_know: "Get to know us"
+      careers: "Careers"
+      about_e+: "About E+"
+      e_devices: "E+ devices"
+      make_money_with_us: "Make money with us"
+      sell_on_e: "Sell on E+"
+      sell_your_services: "Sell your services on E+"
+      sell_bussiness: "Sell on E+ bussiness"
+      advertise_your_products: "Advertise your products"
+      become_an_affilliate: "Become an affilliate"
+      e_payment_product: "E+ payment products"
+      shop_with_points: "Shop with points"
+      credit_card_marketplace: "Credit card marketplace"
+      reload_your_balance: "Reload your balance"
+      e_currency_converter: "E+ currency converter"
+      let_us_help_you: "Let us help you"
+      your_account: "Your account"
+      your_orders: "Your orders"
+      e_prime: "E+ prime"
+      e_assistant: "E+ assistant"
+      help: "Help"
+      tran_anh_vu: "2017 Tran Anh Vu"
   users:
     new:
       signup: "Sign up"
@@ -137,6 +163,7 @@ en:
       country: "Country"
       order: "Place order"
       your_cart_is_empty: "Your cart is empty"
+      please_log_in: "Please log in"
     create:
       order_successfully: "Order successfully. We will send you an confirm email
         soon. Thanks for shopping with us."

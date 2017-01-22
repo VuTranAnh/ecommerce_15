@@ -1,0 +1,25 @@
+<div class="ui grid segment">
+  <div class="eight wide column">
+    <h3 class="header"><%= t ".your_recently_viewed" %></h3>
+  </div>
+  <div class="fifteen wide centered column">
+    <div class="slider">
+      <% if recently_viewed_products %>
+        <% recently_viewed_products.each do |product|  %>
+          <div class="two wide column">
+            <div class="ui fluid card">
+              <%= link_to image_tag(product.image.url), product, class: "ui image" %>
+              <div class="content">
+                <p><%= truncate product.name, length: Settings.product_max_leng %></p>
+                <small><%= number_to_currency product.price %></small>
+              </div>
+              <div class="extra">
+                <%= t ".rating" %><div class="ui star rating"></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
