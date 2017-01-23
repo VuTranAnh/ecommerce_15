@@ -4,19 +4,23 @@
 <div class="nine wide products column">
   <div class="ui form">
     <div class="ui basic segment">
-      <div class="two fields">
-        <div class="field">
-          <div class="ui selection dropdown">
-
+      <%= form_tag admin_products_path, method: :get, html: {class: "ui form"} do %>
+        <div class="inline fields">
+          <div class="field">
+            <%= select_tag :category_id,
+              options_for_select((custom_display @subcategories),
+                params[:category_id]),
+              class: "ui dropdown", include_blank: "Category" %>
+          </div>
+          <div class="field">
+            <div class="ui icon input">
+              <%= text_field_tag :search, params[:search],
+                placeholder: "Search..." %>
+              <i class="search icon"></i>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <div class="ui icon input">
-            <input type="text" placeholder="Search..">
-            <i class="search icon"></i>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

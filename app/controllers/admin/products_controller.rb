@@ -1,9 +1,10 @@
 class Admin::ProductsController < Admin::ApplicationController
-  before_action :load_subcategories, only: [:new, :edit, :update]
+  before_action :load_subcategories, except: [:create, :destroy]
   before_action :load_product, only: [:edit, :update, :destroy]
 
   def index
-    @products = Product.order(created_at: :desc)
+    @products = Product.search(params[:category_id], params[:search])
+      .order(created_at: :desc)
       .page(params[:page_number]).per Settings.products_per_page
   end
 

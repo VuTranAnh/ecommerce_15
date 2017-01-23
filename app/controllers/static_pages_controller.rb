@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
 
   def show
     if valid_page?
-      @products = Product.order(created_at: :desc)
+      @products = Product.search(params[:category_id], params[:search])
+        .order(created_at: :desc)
         .page(params[:page_number]).per Settings.products_per_page
       render "static_pages/#{params[:page]}"
     else
