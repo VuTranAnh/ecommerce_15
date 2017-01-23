@@ -27,3 +27,9 @@ subcategories_ids.each do |subcategory_id|
       origin: Faker::Address.country, category_id: subcategory_id)
   end
 end
+
+unless User.exists? email: "admin@mail.com"
+  User.create! name: "TRAN ANH VU", email: "admin@mail.com",
+    password: "password", password_confirmation: "password", is_admin: true,
+    address: "45 Dong Ke", phone: "1234567898"
+end

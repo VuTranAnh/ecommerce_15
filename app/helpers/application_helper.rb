@@ -31,4 +31,12 @@ module ApplicationHelper
       paginate_offset = (params[:page_number].to_i - 1) * 50
     end
   end
+
+  def admin_section?
+    controller.class.parent == Admin
+  end
+
+  def custom_display subcategories
+    subcategories.map {|c| ["#{c.parent.name} > #{c.name}", c.id]}
+  end
 end

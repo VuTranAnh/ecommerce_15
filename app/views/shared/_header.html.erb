@@ -34,7 +34,14 @@
               <span class="text"><%= t ".account" %></span>
               <i class="dropdown icon"></i>
               <div class="menu">
-                <div class="item"><%= link_to t(".profile"), current_user %></div>
+                <% if current_user.is_admin? %>
+                  <div class="item">
+                    <%= link_to t(".admin"), admin_root_path %>
+                  </div>
+                <% end %>
+                <div class="item">
+                  <%= link_to t(".profile"), current_user %>
+                </div>
                 <div class="item"><%= link_to t(".settings"),
                   edit_user_path(current_user) %></div>
                 <div class="divider"></div>

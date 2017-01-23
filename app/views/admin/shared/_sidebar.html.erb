@@ -1,0 +1,13 @@
+<div class="ui left fixed vertical inverted menu">
+  <div class="item">
+    <h4 class="ui grey header">
+      <%= link_to current_user.name, current_user %>
+    </h4>
+    <%= link_to "Sign out", logout_path, method: :delete %>
+  </div>
+  <%= link_to t(".dashboard"), admin_root_path, class: "item" %>
+  <%= link_to t(".orders"), "#", class: "item" %>
+  <%= link_to t(".products"), admin_products_path, class: "item" %>
+  <%= link_to t(".customers"), "#", class: "item" %>
+  <%= link_to t(".admins"), "#", class: "item" %>
+</div>

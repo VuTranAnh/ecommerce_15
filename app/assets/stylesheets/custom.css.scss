@@ -91,3 +91,12 @@ i.angle.right {
 .ui.grid.footer {
   margin-top: 30px;
 }
+
+.ui.main.grid {
+  left: 18.75%;
+  position: relative;
+  width: 81.25%;
+  .products.column {
+    padding: 16px 0;
+  }
+}

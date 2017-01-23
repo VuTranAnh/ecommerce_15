@@ -34,3 +34,7 @@ $(document).on('focus', '#order_payment_method', function() {
 $(document).on('click', '.clickable_row', function() {
     window.location = $(this).data('href');
 });
+
+$(document).on('focus', '#product_category_id', function() {
+  $('option[value=""]').remove();
+})
