@@ -23,4 +23,12 @@ module ApplicationHelper
   def recently_viewed_products
     session[:history].map {|item| Product.find_by id: item} if session[:history]
   end
+
+  def get_pagination_offset
+    if params[:page_number].nil? || params[:page_number].to_i <= 1
+      paginate_offset = 0
+    else
+      paginate_offset = (params[:page_number].to_i - 1) * 50
+    end
+  end
 end

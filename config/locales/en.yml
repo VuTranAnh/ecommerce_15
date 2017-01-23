@@ -78,6 +78,11 @@ en:
       e_assistant: "E+ assistant"
       help: "Help"
       tran_anh_vu: "2017 Tran Anh Vu"
+    table:
+      id: "ID"
+      full_name: "Fullname"
+      ordered_at: "Ordered at"
+      total: "Total"
   users:
     new:
       signup: "Sign up"
@@ -103,6 +108,11 @@ en:
       not_the_right_user: "You are not authorized to do that"
       change_avatar: "Change avatar"
       join_since: "Joined since"
+      your_orders_history: "Your orders history"
+      pending: "Pending"
+      approved: "Approved"
+      rejected: "Rejected"
+      finished: "Finished"
   sessions:
     new:
       login: "Log in"
@@ -167,3 +177,10 @@ en:
     create:
       order_successfully: "Order successfully. We will send you an confirm email
         soon. Thanks for shopping with us."
+    show:
+      not_the_right_user: "Not the right user"
+      cant_find_order: "Cant find that order"
+      order_detail: "Order detail"
+      code: "Code"
+      quantity: "Quantity"
+      total: "Total"

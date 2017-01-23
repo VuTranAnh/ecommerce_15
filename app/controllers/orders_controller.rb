@@ -22,6 +22,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find_by id: params[:id]
+    unless @order
+      flash[:notice] = t ".cant_find_order"
+      return redirect_to current_user
+    end
+
+    unless @order.user == current_user
+      flash[:notice] = t ".not_the_right_user"
+      redirect_to current_user
+    end
+  end
+
   private
   def order_params
     params.require(:order).permit :full_name, :address, :phone, :city, :country,

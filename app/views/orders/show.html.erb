@@ -1,0 +1,39 @@
+<div class="ui grid custom_grid">
+  <div class="twelve wide column">
+    <div class="ui grid cart_headline">
+      <div class="twelve wide column">
+        <h2 class="header"><%= t ".order_detail" %></h2>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list">
+      <% @order.line_items.each do |item| %>
+        <div class="ui grid item">
+          <div class="three wide column">
+            <%= image_tag item.product.image.url, class: "ui small image" %>
+          </div>
+          <div class="nine wide column">
+            <%= link_to item.product.name, product_path(item.product) %>
+            <p><%= t ".code" %>: <%= item.product.code %></p>
+            <p class="price">
+              <%= number_to_currency item.product.price %>
+            </p>
+            <p><%= t ".quantity" %>: <%= item.quantity %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="ui grid">
+        <div class="four wide column">
+          <div class="ui grid">
+            <div class="nine wide right aligned column">
+              <h4 class="header"><%= t ".total" %>:</h4>
+            </div>
+            <div class="two wide column cart_subtotal">
+              <%= number_to_currency @order.total %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/recently_viewed" %>

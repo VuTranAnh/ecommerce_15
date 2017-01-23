@@ -10,4 +10,5 @@ document.addEventListener("turbolinks:load", function() {
     maxRating: 5
   });
   $('.ui.dropdown.qty_select').dropdown();
+  $('.menu .item').tab();
 })
